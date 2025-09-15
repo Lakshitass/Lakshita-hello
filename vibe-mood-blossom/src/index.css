@@ -1,0 +1,417 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MoodVibe Journal Design System */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    /* Card & Container Colors */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --glass-card: 0 0% 10%;
+
+    /* Primary Colors */
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 5%;
+
+    /* Secondary Colors */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    /* Muted Colors */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Accent Colors */
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    /* Form Elements */
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 95%;
+
+    --radius: 1rem;
+
+    /* Rainbow Gradient Background */
+    --rainbow-bg: linear-gradient(
+      45deg,
+      hsl(300, 70%, 50%) 0%,
+      hsl(260, 80%, 60%) 12%,
+      hsl(220, 90%, 65%) 25%,
+      hsl(180, 80%, 55%) 37%,
+      hsl(140, 75%, 55%) 50%,
+      hsl(60, 85%, 60%) 62%,
+      hsl(30, 85%, 60%) 75%,
+      hsl(0, 80%, 65%) 87%,
+      hsl(320, 75%, 55%) 100%
+    );
+
+    /* Mood Colors */
+    --mood-happy: 45 95% 60%;
+    --mood-calm: 200 85% 65%;
+    --mood-energetic: 0 85% 65%;
+    --mood-melancholy: 240 25% 60%;
+    --mood-excited: 280 85% 65%;
+    --mood-peaceful: 120 60% 55%;
+    --mood-sad: 210 60% 50%;
+    --mood-anxious: 25 70% 55%;
+    --mood-tired: 280 20% 45%;
+    --mood-custom: 270 80% 60%;
+
+    /* Mood Gradients */
+    --gradient-happy: linear-gradient(135deg, hsl(45, 95%, 60%), hsl(60, 90%, 70%));
+    --gradient-calm: linear-gradient(135deg, hsl(200, 85%, 65%), hsl(220, 80%, 70%));
+    --gradient-energetic: linear-gradient(135deg, hsl(0, 85%, 65%), hsl(15, 90%, 70%));
+    --gradient-melancholy: linear-gradient(135deg, hsl(240, 25%, 60%), hsl(250, 30%, 65%));
+    --gradient-excited: linear-gradient(135deg, hsl(280, 85%, 65%), hsl(300, 80%, 70%));
+    --gradient-peaceful: linear-gradient(135deg, hsl(120, 60%, 55%), hsl(140, 65%, 60%));
+    --gradient-sad: linear-gradient(135deg, hsl(210, 60%, 50%), hsl(230, 55%, 60%));
+    --gradient-anxious: linear-gradient(135deg, hsl(25, 70%, 55%), hsl(40, 65%, 65%));
+    --gradient-tired: linear-gradient(135deg, hsl(280, 20%, 45%), hsl(260, 25%, 55%));
+    --gradient-custom: linear-gradient(135deg, hsl(270, 80%, 60%), hsl(290, 75%, 70%));
+
+    /* Background Gradients for full page */
+    --bg-happy: linear-gradient(45deg, hsl(45, 95%, 60%), hsl(60, 90%, 70%), hsl(80, 85%, 65%));
+    --bg-calm: linear-gradient(45deg, hsl(200, 85%, 65%), hsl(220, 80%, 70%), hsl(240, 75%, 65%));
+    --bg-energetic: linear-gradient(45deg, hsl(0, 85%, 65%), hsl(15, 90%, 70%), hsl(30, 85%, 65%));
+    --bg-melancholy: linear-gradient(45deg, hsl(240, 25%, 60%), hsl(250, 30%, 65%), hsl(260, 25%, 60%));
+    --bg-excited: linear-gradient(45deg, hsl(280, 85%, 65%), hsl(300, 80%, 70%), hsl(320, 85%, 65%));
+    --bg-peaceful: linear-gradient(45deg, hsl(120, 60%, 55%), hsl(140, 65%, 60%), hsl(160, 60%, 55%));
+    --bg-sad: linear-gradient(45deg, hsl(210, 60%, 50%), hsl(230, 55%, 60%), hsl(250, 60%, 55%));
+    --bg-anxious: linear-gradient(45deg, hsl(25, 70%, 55%), hsl(40, 65%, 65%), hsl(55, 70%, 60%));
+    --bg-tired: linear-gradient(45deg, hsl(280, 20%, 45%), hsl(260, 25%, 55%), hsl(240, 20%, 50%));
+    --bg-custom: linear-gradient(45deg, hsl(270, 80%, 60%), hsl(290, 75%, 70%), hsl(310, 80%, 65%));
+    --bg-default: linear-gradient(
+      45deg,
+      hsl(300, 70%, 50%) 0%,
+      hsl(260, 80%, 60%) 12%,
+      hsl(220, 90%, 65%) 25%,
+      hsl(180, 80%, 55%) 37%,
+      hsl(140, 75%, 55%) 50%,
+      hsl(60, 85%, 60%) 62%,
+      hsl(30, 85%, 60%) 75%,
+      hsl(0, 80%, 65%) 87%,
+      hsl(320, 75%, 55%) 100%
+    );
+
+    /* Glass Effects */
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background: var(--bg-default);
+    background-size: 400% 400%;
+    animation: rainbow-flow 8s ease infinite;
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+    transition: background 0.8s ease-in-out;
+  }
+
+  body[data-mood="happy"] {
+    background: var(--bg-happy);
+  }
+
+  body[data-mood="calm"] {
+    background: var(--bg-calm);
+  }
+
+  body[data-mood="energetic"] {
+    background: var(--bg-energetic);
+  }
+
+  body[data-mood="melancholy"] {
+    background: var(--bg-melancholy);
+  }
+
+  body[data-mood="excited"] {
+    background: var(--bg-excited);
+  }
+
+  body[data-mood="peaceful"] {
+    background: var(--bg-peaceful);
+  }
+
+  body[data-mood="sad"] {
+    background: var(--bg-sad);
+  }
+
+  body[data-mood="anxious"] {
+    background: var(--bg-anxious);
+  }
+
+  body[data-mood="tired"] {
+    background: var(--bg-tired);
+  }
+
+  body[data-mood="custom"] {
+    background: var(--bg-custom);
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+
+  .mood-button {
+    @apply relative overflow-hidden rounded-xl p-4 text-center transition-all duration-300 cursor-pointer;
+    @apply bg-card/50 backdrop-blur-sm border border-border/50;
+    @apply hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+
+  .mood-button.selected {
+    @apply ring-2 ring-offset-2 ring-offset-background shadow-xl scale-105;
+  }
+
+  .mood-button-happy.selected {
+    background: var(--gradient-happy);
+    @apply ring-yellow-400 text-black;
+  }
+
+  .mood-button-calm.selected {
+    background: var(--gradient-calm);
+    @apply ring-blue-400 text-white;
+  }
+
+  .mood-button-energetic.selected {
+    background: var(--gradient-energetic);
+    @apply ring-red-400 text-white;
+  }
+
+  .mood-button-melancholy.selected {
+    background: var(--gradient-melancholy);
+    @apply ring-purple-400 text-white;
+  }
+
+  .mood-button-excited.selected {
+    background: var(--gradient-excited);
+    @apply ring-pink-400 text-white;
+  }
+
+  .mood-button-peaceful.selected {
+    background: var(--gradient-peaceful);
+    @apply ring-green-400 text-white;
+  }
+
+  .mood-button-sad.selected {
+    background: var(--gradient-sad);
+    @apply ring-blue-300 text-white;
+  }
+
+  .mood-button-anxious.selected {
+    background: var(--gradient-anxious);
+    @apply ring-orange-400 text-white;
+  }
+
+  .mood-button-tired.selected {
+    background: var(--gradient-tired);
+    @apply ring-purple-300 text-white;
+  }
+
+  .mood-button-custom.selected {
+    background: var(--gradient-custom);
+    @apply ring-violet-400 text-white;
+  }
+
+  .capture-button {
+    @apply w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300;
+    @apply bg-gradient-to-r from-purple-600 to-blue-600 text-white;
+    @apply hover:from-purple-700 hover:to-blue-700 hover:scale-105 active:scale-95;
+    @apply shadow-lg hover:shadow-xl;
+  }
+
+  .capture-button-happy {
+    @apply bg-gradient-to-r from-yellow-500 to-orange-500 text-black;
+    @apply hover:from-yellow-600 hover:to-orange-600;
+  }
+
+  .capture-button-calm {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-500 text-white;
+    @apply hover:from-blue-600 hover:to-cyan-600;
+  }
+
+  .capture-button-energetic {
+    @apply bg-gradient-to-r from-red-500 to-pink-500 text-white;
+    @apply hover:from-red-600 hover:to-pink-600;
+  }
+
+  .capture-button-melancholy {
+    @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white;
+    @apply hover:from-purple-600 hover:to-indigo-600;
+  }
+
+  .capture-button-excited {
+    @apply bg-gradient-to-r from-pink-500 to-purple-500 text-white;
+    @apply hover:from-pink-600 hover:to-purple-600;
+  }
+
+  .capture-button-peaceful {
+    @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white;
+    @apply hover:from-green-600 hover:to-emerald-600;
+  }
+
+  .capture-button-sad {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 text-white;
+    @apply hover:from-blue-700 hover:to-indigo-700;
+  }
+
+  .capture-button-anxious {
+    @apply bg-gradient-to-r from-orange-500 to-amber-500 text-white;
+    @apply hover:from-orange-600 hover:to-amber-600;
+  }
+
+  .capture-button-tired {
+    @apply bg-gradient-to-r from-gray-500 to-slate-500 text-white;
+    @apply hover:from-gray-600 hover:to-slate-600;
+  }
+
+  .capture-button-custom {
+    @apply bg-gradient-to-r from-violet-500 to-purple-500 text-white;
+    @apply hover:from-violet-600 hover:to-purple-600;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-input border border-border;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+    @apply transition-all duration-200;
+  }
+
+  .tab-nav {
+    @apply flex bg-card/80 backdrop-blur-md rounded-xl p-2 shadow-lg border border-border/50;
+  }
+
+  .tab-button {
+    @apply flex-1 px-4 py-3 rounded-lg font-medium transition-all duration-200;
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary/50;
+  }
+
+  .tab-button.active {
+    @apply bg-primary text-primary-foreground shadow-sm;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes rainbow-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
