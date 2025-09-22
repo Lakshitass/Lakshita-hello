@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Profile — Laksita S</title>
+  <meta name="description" content="Personal profile page: header, about, skills, contact." />
+  <style>
+    /* Reset-ish */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      line-height:1.45;
+      color:#0f172a;
+      background:linear-gradient(180deg,#f7fbff, #ffffff);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+
+    /* Page container */
+    .page{
+      max-width:980px;
+      margin:0 auto;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      border-radius:16px;
+      box-shadow:0 8px 30px rgba(12,15,30,0.08);
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+
+    header.site-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:28px 32px;
+      background:linear-gradient(90deg,#eef2ff, #ffffff);
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px
+    }
+    .avatar{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#ffd7a8,#ffd6f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:#1f2937
+    }
+    .name{font-size:1.25rem;font-weight:700}
+    .role{font-size:.9rem;color:#475569}
+
+    nav.site-nav{display:flex;gap:12px}
+    nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:#0f172a;font-weight:600}
+    nav a:hover{background:rgba(15,23,42,0.04)}
+
+    /* Main grid */
+    main.page-main{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:28px;
+      padding:28px 32px 36px 32px;
+    }
+
+    /* Left column: sections */
+    section.card{
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:12px;padding:18px;border:1px solid rgba(15,23,42,0.04);
+      box-shadow:0 6px 18px rgba(12,15,30,0.03);
+      margin-bottom:18px;
+    }
+    h2.section-title{margin:0 0 8px 0;font-size:1.05rem}
+    p.lead{margin:0;color:#334155}
+
+    /* Skills list */
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{background:rgba(99,102,241,0.09);padding:8px 10px;border-radius:999px;font-weight:600;color:#4338ca}
+
+    /* Contact card (right column) */
+    aside.contact-card{position:sticky;top:28px;height:max-content}
+    .contact-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,0.03)}
+    .contact-item a{color:#0f172a;text-decoration:none;font-weight:600}
+
+    /* Footer */
+    footer.site-footer{padding:14px 22px;background:transparent;text-align:center;color:#475569;font-size:.9rem}
+    .email-link {
+      font-size: 0.82rem; 
+      font-weight: 600;
+      color: #0f172a;
+        }
+    /* Responsive */
+    @media (max-width:860px){
+      main.page-main{grid-template-columns:1fr;}
+      aside.contact-card{position:relative;top:auto}
+      header.site-header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    /* Small utilities */
+    .muted{color:#64748b;font-size:.95rem}
+    .tagline{color:#0f172a;opacity:.85}
+
+    /* Tiny form styles */
+    form.contact-form{display:flex;flex-direction:column;gap:8px}
+    form input, form textarea{padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);font:inherit}
+    form button{padding:10px;border-radius:10px;border:0;background:#6366f1;color:white;font-weight:700;cursor:pointer}
+    form button:hover{filter:brightness(.95)}
+  </style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header class="site-header">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">L</div>
+        <div>
+          <div class="name">Lakshita S — Data Science Student</div>
+          <div class="role muted">Integrated M.Sc. Data Science • GATE 2026</div>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <div>
+        <section id="about" class="card" aria-labelledby="about-title">
+          <h2 id="about-title" class="section-title">About</h2>
+          <p class="lead">Hi — I’m Lakshita S. I’m an Integrated M.Sc. Data Science student building ML and DL projects, working on research in medical imaging and computer vision, and preparing for GATE 2026. I enjoy turning datasets into visual stories and automated systems.</p>
+
+        </section>
+
+        <section id="skills" class="card" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="section-title">Skills</h2>
+          <div class="skills" aria-label="Skills list">
+            <span class="skill">Python</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Deep Learning (PyTorch)</span>
+            <span class="skill">Reinforcement Learning</span>
+            <span class="skill">Data Visualisation (Matplotlib, Seaborn)</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Git</span>
+            <span class="skill">HTML &amp; CSS</span>
+          </div>
+
+          
+        </section>
+
+        <section class="card" aria-labelledby="projects-title">
+          <h2 id="projects-title" class="section-title">Selected Projects</h2>
+          <ul style="margin:8px 0 0 20px; padding:0; color:#334155">
+            <li>Brain Tumur Detection project</li>
+            <li>Electricity payment system - Full stack</li>
+            <li>Ladybug Detection - research paper</li>
+            <li>Blood cancer detection — research paper </li>
+            <li>Trading bot — RL-based strategy evaluation</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="contact-card" id="contact" aria-labelledby="contact-title">
+        <section class="card" aria-labelledby="contact-title">
+          <h2 id="contact-title" class="section-title">Contact</h2>
+          <p class="muted">I’m open to collaborations, mentorship, and research discussions.</p>
+
+          <div class="contact-list">
+          <div class="contact-item">
+              <div style="font-weight:700">✉️</div>
+                 <div>
+                  <a class="email-link" href="mailto:lakshitasenthilkumar20@gmail.com">
+                  lakshitasenthilkumar20@gmail.com
+                  </a>
+                  </div>
+                </div>
+
+          <div class="contact-item">
+              <div style="font-weight:700">💻</div>
+           <div>
+         <a href="https://github.com/Lakshitass" target="_blank" rel="noopener">GitHub</a>
+           </div>
+          </div>
+
+        <div class="contact-item">
+        <div style="font-weight:700">🔗</div>
+         <div>
+             <a href="https://www.linkedin.com/in/lakshita-s-a59193259/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        </div>
+
+        <div class="contact-item">
+         <div style="font-weight:700">📍</div>
+         <div class="muted">Tamil Nadu, India</div>
+         </div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid rgba(15,23,42,0.04)" />
+
+          
+        </section>
+
+        
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+     
+    </footer>
+  </div>
+</body>
+</html>
