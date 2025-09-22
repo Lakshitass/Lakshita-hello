@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>To-Do List (Task 04)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { --bg:#f7fafc; --card:#fff; --muted:#6b7280; --accent:#2563eb; }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#111}
+    .wrap{max-width:720px;margin:48px auto;padding:20px}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    h1{margin:0 0 12px 0;font-size:1.4rem}
+    .row{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+    input[type="text"]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;font-size:0.95rem}
+    button{padding:9px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:#fff;cursor:pointer;font-weight:600}
+    button.primary{background:var(--accent);color:#fff;border-color:transparent}
+    ul.todo-list{list-style:none;padding:0;margin:0}
+    li.task{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;border:1px solid #f1f5f9;margin-bottom:8px}
+    .title{flex:1;word-break:break-word;font-size:0.98rem}
+    .title.completed{text-decoration:line-through;color:var(--muted)}
+    .controls{display:flex;gap:8px}
+    .btn-ghost{background:transparent;border:1px solid #e6e9ef;padding:6px 8px;border-radius:8px}
+    .small{font-size:0.9rem;color:var(--muted)}
+    .empty{text-align:center;padding:18px 8px;color:var(--muted)}
+    .footer{margin-top:14px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:0.9rem}
+    .count{font-weight:700;color:#111}
+    @media(max-width:480px){.row{flex-direction:column;align-items:stretch}button{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>To-Do List (Task 04)</h1>
+      <div class="row">
+        <input id="taskInput" type="text" placeholder="Add a new task" />
+        <button id="addBtn" class="primary">Add</button>
+      </div>
+      <ul id="todoList" class="todo-list"></ul>
+      <div id="empty" class="empty">No tasks yet — add one above.</div>
+      <div class="footer">
+        <div class="small">Tasks remaining: <span id="count" class="count">0</span></div>
+        <div>
+          <button id="clearCompleted" class="btn-ghost">Clear Completed</button>
+          <button id="clearAll" class="btn-ghost">Delete All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="todo.js"></script>
+</body>
+</html>
