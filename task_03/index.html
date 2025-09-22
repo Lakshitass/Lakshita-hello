@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Task 03 – JavaScript & TypeScript Basics</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; padding: 24px; }
+    h1 { color: #333; }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+    input[type="number"] {
+      width: 120px;
+      padding: 6px;
+      margin-right: 6px;
+    }
+    button {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 03 – JavaScript Basics</h1>
+
+  <div class="card">
+    <h2>1) Sum of two numbers</h2>
+    <input id="n1" type="number" placeholder="First number">
+    <input id="n2" type="number" placeholder="Second number">
+    <button id="sumBtn">Show Sum</button>
+    <div id="sumResult" class="result"></div>
+  </div>
+
+  <div class="card">
+    <h2>2) Print numbers 1–10</h2>
+    <button id="printBtn">Print in Console</button>
+  </div>
+
+  <div class="card">
+    <h2>3) Filter even numbers</h2>
+    <p>Array: [1,2,3,4,5,6,7,8,9,10]</p>
+    <button id="filterBtn">Filter Evens</button>
+    <div id="evensResult" class="result"></div>
+  </div>
+
+  <!-- Load your task_03.js -->
+  <script>
+    // Override prompt/alert-based logic with buttons for browser testing
+    
+    // 1) Sum of two numbers
+    const sumBtn = document.getElementById('sumBtn');
+    sumBtn.addEventListener('click', () => {
+      const a = parseFloat(document.getElementById('n1').value) || 0;
+      const b = parseFloat(document.getElementById('n2').value) || 0;
+      const s = a + b;
+      document.getElementById('sumResult').textContent = "Sum: " + s;
+    });
+
+    // 2) Print numbers 1–10
+    const printBtn = document.getElementById('printBtn');
+    printBtn.addEventListener('click', () => {
+      console.log("Numbers from 1 to 10:");
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+      alert("Check the console for numbers 1–10.");
+    });
+
+    // 3) Filter even numbers
+    const filterBtn = document.getElementById('filterBtn');
+    filterBtn.addEventListener('click', () => {
+      const numbers = [1,2,3,4,5,6,7,8,9,10];
+      const evens = numbers.filter(n => n % 2 === 0);
+      document.getElementById('evensResult').textContent =
+        "Even numbers: " + evens.join(", ");
+      console.log("Even numbers:", evens);
+    });
+  </script>
+</body>
+</html>
